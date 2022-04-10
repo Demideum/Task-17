@@ -1,0 +1,32 @@
+namespace IJunior_Task17
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+
+            int searchNumbers;
+            int numderRandom;
+            int countSearchNumbers = 0;
+
+            numderRandom = random.Next(0, 28);
+            Console.WriteLine($"Случайное число {numderRandom}");
+
+            for (int i = 100; i < 1000; i++)
+            {
+                searchNumbers = i;
+                while (searchNumbers-- > 0)
+                {
+                    searchNumbers = searchNumbers - numderRandom;
+                    
+                    if (searchNumbers == 0) 
+                    {
+                        countSearchNumbers++;                        
+                    }
+                }
+            }
+            Console.WriteLine($"\nКоличество трехзначных натуральных чисел, которые кратны {numderRandom}: {countSearchNumbers} чисел.");
+        }
+    }
+}
