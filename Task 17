@@ -6,23 +6,27 @@ namespace IJunior_Task17
         {
             Random random = new Random();
 
+            int minRandomNumber = 0;
+            int maxRandomNumber = 28;
+            int minSearchBoundary = 100;
+            int maxSearchBoundary = 1000;
             int searchNumbers;
             int numderRandom;
             int countSearchNumbers = 0;
 
-            numderRandom = random.Next(0, 28);
+            numderRandom = random.Next(minRandomNumber, maxRandomNumber);
             Console.WriteLine($"Случайное число {numderRandom}");
 
-            for (int i = 100; i < 1000; i++)
+            for (int i = minSearchBoundary; i < maxSearchBoundary; i++)
             {
                 searchNumbers = i;
                 while (searchNumbers-- > 0)
                 {
                     searchNumbers = searchNumbers - numderRandom;
-                    
-                    if (searchNumbers == 0) 
+
+                    if (searchNumbers == 0)
                     {
-                        countSearchNumbers++;                        
+                        countSearchNumbers++;
                     }
                 }
             }
